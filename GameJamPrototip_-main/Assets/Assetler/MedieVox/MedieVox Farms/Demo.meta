@@ -1,8 +1,11 @@
 fileFormatVersion: 2
 guid: ef40b558a48886d429c58bae2472c976
 folderAsset: yes
+<<<<<<< HEAD
 timeCreated: 1519612479
 licenseType: Store
+=======
+>>>>>>> ugurDev
 DefaultImporter:
   externalObjects: {}
   userData: 
