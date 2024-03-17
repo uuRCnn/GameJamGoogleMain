@@ -1,4 +1,5 @@
 https://www.youtube.com/watch?v=cb5QuOamJu4
+![Uploading Ekran Resmi 2024-03-18 00.01.12.png…]()
 
 Hatasız çalışacak şekilde indirip oynıyabilirsiniz.
 
@@ -25,3 +26,5 @@ Slimeler'ın hepsini yok ettin artık demokrasiye balans ayarı vermeye gerek yo
 
 Lose:
 Slime’ları sana düşman olarak onları birleştirdin fakat demokrasiye balans ayarı veremedin, tekrar denemen lazım.
+
+
