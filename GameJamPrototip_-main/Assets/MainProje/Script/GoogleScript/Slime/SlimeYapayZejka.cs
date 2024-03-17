@@ -1,24 +1,10 @@
-using System;
-using Script.GoogleScript.Player;
+using MainProje.Script.GoogleScript.Player;
 using UnityEngine;
 
-namespace Script.GoogleScript.Slime
+namespace MainProje.Script.GoogleScript.Slime
 {
   public class SlimeYapayZejka : MonoBehaviour
   {
-    [SerializeField]         EnemyAi   slimeAi;
-    [SerializeField] private Transform ownSlaimeTransform;
-
-    [SerializeField] private GameObject player;
-
-    private PlayerHealth _playerHealth;
-
-
-    [SerializeField] LayerMask playerLayerMask;
-    private          bool      JustOneAttack;
-
-    private float slimeScaleBoyut;
-
     public enum SlimeRütbe
     {
       AskerSlime,
@@ -26,27 +12,22 @@ namespace Script.GoogleScript.Slime
       KingSlimeUzun
     }
 
+    [SerializeField] private EnemyAi   slimeAi;
+    [SerializeField] private Transform ownSlaimeTransform;
+
+    [SerializeField] private GameObject player;
+
+
+    [SerializeField] private LayerMask playerLayerMask;
+
     [SerializeField] public SlimeRütbe currentSlimEnum;
 
+    private PlayerHealth _playerHealth;
 
-    private void OnEnable()
-    {
-      slimeAi.OnAttack += SlimeAttack;
+    private float dmgTime;
+    private bool  JustOneAttack;
 
-      if (OwnGameManager.isGameStart)
-        AttackPlayer();
-
-
-      if (currentSlimEnum == SlimeRütbe.KingSlime || currentSlimEnum == SlimeRütbe.KingSlimeUzun)
-        KingSlimeScale();
-      else
-        RandomScale();
-
-
-      AttackPlayer();
-
-      slimeScaleBoyut = ownSlaimeTransform.localScale.x;
-    }
+    private float slimeScaleBoyut;
 
     private void Awake()
     {
@@ -73,18 +54,13 @@ namespace Script.GoogleScript.Slime
       // slimeScaleBoyut = ownSlaimeTransform.localScale.x;
     }
 
-    private float dmgTime = 0;
-
     private void Update()
     {
       var Distance = Vector3.Distance( // *1.2f 'in nedeni: Biraz alaçakta oluyor onu yukarı çektim.
         ownSlaimeTransform.position + new Vector3(0, ownSlaimeTransform.position.y * 1.2f, 0),
         player.transform.position);
 
-      if (Skils.Instance.isDmgSkillUsing == true)
-      {
-        return; // skill kullanıyors dmg almaması için return atıyoruz.
-      }
+      if (Skils.Instance.isDmgSkillUsing) return; // skill kullanıyors dmg almaması için return atıyoruz.
 
       if (Distance < slimeScaleBoyut && dmgTime > 0.5f)
       {
@@ -98,6 +74,26 @@ namespace Script.GoogleScript.Slime
       }
     }
 
+
+    private void OnEnable()
+    {
+      slimeAi.OnAttack += SlimeAttack;
+
+      if (OwnGameManager.isGameStart)
+        AttackPlayer();
+
+
+      if (currentSlimEnum == SlimeRütbe.KingSlime || currentSlimEnum == SlimeRütbe.KingSlimeUzun)
+        KingSlimeScale();
+      else
+        RandomScale();
+
+
+      AttackPlayer();
+
+      slimeScaleBoyut = ownSlaimeTransform.localScale.x;
+    }
+
     private void AttackPlayer()
     {
       slimeAi.currentState = SlimeAnimationState.Walk;
@@ -105,7 +101,7 @@ namespace Script.GoogleScript.Slime
 
     private void RandomScale()
     {
-      var randomScale = UnityEngine.Random.Range(1.5f, 4.5f);
+      var randomScale = Random.Range(1.5f, 4.5f);
       ownSlaimeTransform.localScale = new Vector3(randomScale, randomScale, randomScale);
     }
 
@@ -131,11 +127,8 @@ namespace Script.GoogleScript.Slime
         player.transform.position);
 
 
-      if (Distance < slimeScaleBoyut)
-      {
-        _playerHealth.PlayerTakeDamage(3 * slimeScaleBoyut);
-        // DMG ALDII !!!
-      }
+      if (Distance < slimeScaleBoyut) _playerHealth.PlayerTakeDamage(3 * slimeScaleBoyut);
+      // DMG ALDII !!!
     }
   }
 }

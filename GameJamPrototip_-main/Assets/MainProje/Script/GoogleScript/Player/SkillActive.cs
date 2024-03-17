@@ -1,5 +1,4 @@
-using MainProje.Script.Hero;
-using Script;
+using MainProje.Script.GoogleScript.Controler;
 
 namespace MainProje.Script.GoogleScript.Player
 {

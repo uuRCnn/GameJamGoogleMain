@@ -1,16 +1,12 @@
-using System;
-using System.Collections;
-using MainProje.Script.GoogleScript.Controler;
-using Script.GoogleScript;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-namespace Script.Manager
+namespace MainProje.Script.GoogleScript.Controler
 {
   public enum MusicName : byte
   {
-    GamePlay,
+    GamePlay
   }
 
   // todo: Zamanı gelince burayı ayarla
@@ -102,6 +98,58 @@ namespace Script.Manager
     }
 #endregion
 
+
+    public void RandomEfxDamage()
+    {
+      var random = Random.Range(1, dmgClips.Length);
+
+      var random2 = Random.Range(0.3f, 0.9f);
+
+      var clips = dmgClips[random];
+
+      PlaySoundEffect(clips, random2);
+    }
+
+    public void RandomEfxTakdeDmg()
+    {
+      var random = Random.Range(1, takeDmgClips.Length);
+
+      var random2 = Random.Range(0.3f, 0.9f);
+
+
+      var clips = takeDmgClips[random];
+
+      PlaySoundEffect(clips, random2);
+    }
+
+    public void PlaySondClipt()
+    {
+      PlaySoundEffect(Sonciclip);
+    }
+
+
+    public void SkiZZZZZ()
+    {
+      var random2 = Random.Range(0.6f, 0.9f);
+
+      PlaySoundEffect(zSound, random2);
+    }
+
+    public void SkillXXXXX()
+    {
+      var random2 = Random.Range(0.6f, 0.9f);
+
+      PlaySoundEffect(xSound, random2);
+    }
+
+
+    public void SkillCCCCCC()
+    {
+      var random2 = Random.Range(0.6f, 0.9f);
+
+      PlaySoundEffect(cSound, random2);
+    }
+
 #region ==> Little Functions <==
     // =========================================================================
 
@@ -131,57 +179,5 @@ namespace Script.Manager
       audioSource.Play();
     }
 #endregion
-
-
-    public void RandomEfxDamage()
-    {
-      var random = Random.Range(1, dmgClips.Length);
-
-      float random2 = Random.Range(0.3f, 0.9f);
-
-      var clips = dmgClips[random];
-
-      PlaySoundEffect(clips, random2);
-    }
-
-    public void RandomEfxTakdeDmg()
-    {
-      var random = Random.Range(1, takeDmgClips.Length);
-
-      float random2 = Random.Range(0.3f, 0.9f);
-
-
-      var clips = takeDmgClips[random];
-
-      PlaySoundEffect(clips, random2);
-    }
-
-    public void PlaySondClipt()
-    {
-      PlaySoundEffect(Sonciclip);
-    }
-
-
-    public void SkiZZZZZ()
-    {
-      float random2 = Random.Range(0.6f, 0.9f);
-
-      PlaySoundEffect(zSound, random2);
-    }
-
-    public void SkillXXXXX()
-    {
-      float random2 = Random.Range(0.6f, 0.9f);
-
-      PlaySoundEffect(xSound, random2);
-    }
-
-
-    public void SkillCCCCCC()
-    {
-      float random2 = Random.Range(0.6f, 0.9f);
-
-      PlaySoundEffect(cSound, random2);
-    }
   }
 }

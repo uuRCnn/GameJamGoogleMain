@@ -1,36 +1,31 @@
 using System;
-using System.Threading;
 using Cinemachine;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using MainProje.Script.GoogleScript.Controler;
 using UnityEngine;
 
-namespace Script.GoogleScript
+namespace MainProje.Script.GoogleScript
 {
   public class OwnGameManager : Singleton<OwnGameManager>
   {
     public static bool isGameStart;
+
+
+    public static Action GameStart;
 
     [SerializeField] private Transform                VirtualCameraTransform;
     [SerializeField] private CinemachineVirtualCamera _virtualCamera;
     [SerializeField] private Transform                DirectionLightTrasnfrom;
 
 
-    public static Action GameStart;
-
-    private Vector3 asılRotationVector = new Vector3(45, 22, 0);
-
-
     public bool isSmileKingDie;
     public bool isUuzunKingDie;
     public bool isAllBossDie;
 
-    private bool isSkipStart;
+    private readonly Vector3 asılRotationVector = new(45, 22, 0);
 
-    private void OnEnable()
-    {
-      GameStart += EventCamereZoomOut;
-    }
+    private bool isSkipStart;
 
     private async void Start()
     {
@@ -47,6 +42,21 @@ namespace Script.GoogleScript
       GameStartFunc();
     }
 
+    private void Update()
+    {
+      if (isSmileKingDie && isUuzunKingDie)
+      {
+        isAllBossDie = true;
+        UIManager.Instance.WinUI();
+        // todo: oyunu bitir
+      }
+    }
+
+    private void OnEnable()
+    {
+      GameStart += EventCamereZoomOut;
+    }
+
     public void GameStartFunc()
     {
       isSkipStart = true;
@@ -61,16 +71,6 @@ namespace Script.GoogleScript
       CamereRotations();
 
       DirecitolightRotation();
-    }
-
-    private void Update()
-    {
-      if (isSmileKingDie && isUuzunKingDie)
-      {
-        isAllBossDie = true;
-        UIManager.Instance.WinUI();
-        // todo: oyunu bitir
-      }
     }
 
     private void CamereRotations() //todo: text ile 10 15 sn sonra bu çalışacak

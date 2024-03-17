@@ -1,12 +1,11 @@
-using System;
+using _Microlight.MicroBar.Scripts;
 using Cysharp.Threading.Tasks;
-using Microlight.MicroBar;
-using Script.Manager;
+using MainProje.Script.GoogleScript.Controler;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace Script.GoogleScript
+namespace MainProje.Script.GoogleScript
 {
   public class UIManager : Singleton<UIManager>
   {
@@ -64,10 +63,7 @@ namespace Script.GoogleScript
 
     private void Update()
     {
-      if (OwnGameManager.isGameStart)
-      {
-        Yaraslar.SetActive(true);
-      }
+      if (OwnGameManager.isGameStart) Yaraslar.SetActive(true);
     }
 
     public void SpawnCEffeckt()
@@ -119,9 +115,9 @@ namespace Script.GoogleScript
       AudioManager.Instance.PlaySondClipt();
       while (x < 20)
       {
-        var random = UnityEngine.Random.Range(0, 360);
+        var random = Random.Range(0, 360);
 
-        var randomSclae = UnityEngine.Random.Range(1f, 10f);
+        var randomSclae = Random.Range(1f, 10f);
         var obeh = Instantiate(SOnPatlama, PlayerTar.transform.position, Quaternion.identity);
         obeh.transform.localScale = new Vector3(randomSclae, randomSclae, randomSclae);
         await UniTask.WaitForSeconds(0.1f);

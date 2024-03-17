@@ -1,15 +1,13 @@
-using System;
-using MainProje.Script.GoogleScript.Player;
-using MainProje.Script.Hero;
+using MainProje.Script.GoogleScript.Controler;
 using UnityEngine;
 
-namespace Script.GoogleScript
+namespace MainProje.Script.GoogleScript
 {
   public class InputManager : Singleton<InputManager>
   {
-    private float CouldDownZ = 0;
-    private float CouldDownX = 0;
-    private float CouldDownC = 0;
+    private float CouldDownC;
+    private float CouldDownX;
+    private float CouldDownZ;
 
     private void Update()
     {
@@ -25,10 +23,7 @@ namespace Script.GoogleScript
       {
         Skils.Instance.SetSpeed(Skils.Instance.sabitSpeed);
         Skils.Instance.isDmgSkillUsing = false;
-        if (Skils.Instance.spaceAmount <= 1f)
-        {
-          Skils.Instance.spaceAmount += Time.deltaTime / 10;
-        }
+        if (Skils.Instance.spaceAmount <= 1f) Skils.Instance.spaceAmount += Time.deltaTime / 10;
       }
 
 

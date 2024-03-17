@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Script.Helper
+namespace MainProje.Script.Helper
 {
   public static class Helper
   {

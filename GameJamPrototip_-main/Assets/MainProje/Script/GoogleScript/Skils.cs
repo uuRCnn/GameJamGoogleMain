@@ -1,15 +1,12 @@
-using System;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using MainProje.Script.GoogleScript.Controler;
 using MainProje.Script.GoogleScript.Player;
+using MainProje.Script.GoogleScript.Slime;
 using MimicSpace;
-using Script.GoogleScript.Player;
-using Script.GoogleScript.Slime;
-using Script.Manager;
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
 
-namespace Script.GoogleScript
+namespace MainProje.Script.GoogleScript
 {
   public class Skils : Singleton<Skils>
   {
@@ -22,16 +19,16 @@ namespace Script.GoogleScript
 
     [SerializeField] private GameObject[] spawnObjectsGroupList;
 
-    public readonly float sabitSpeed  = 8f;
-    public readonly float sabitScale  = 1f;
-    public readonly float sabitLight  = 0.3f;
-    public readonly float sabitHeight = 0.5f;
-
     public float spaceAmount;
 
     public bool isDmgSkillUsing;
 
-    public bool isPRessZZZ;
+    public          bool  isPRessZZZ;
+    public readonly float sabitHeight = 0.5f;
+    public readonly float sabitLight  = 0.3f;
+    public readonly float sabitScale  = 1f;
+
+    public readonly float sabitSpeed = 8f;
 
     private void Update()
     {
@@ -167,14 +164,10 @@ namespace Script.GoogleScript
     private void AllTakeDamageAnim() //dmg vurmaz sadece animasyonunu çalıştırır
     {
       // var randomCount = Random.Range(1, spawnObjectsGroupList.Length);
-      for (int i = 0; i < spawnObjectsGroupList.Length; i++)
-      {
+      for (var i = 0; i < spawnObjectsGroupList.Length; i++)
         foreach (var slime in
                  spawnObjectsGroupList[i].GetComponentsInChildren<SlimeHealth>())
-        {
           slime.TakeDamage(3);
-        }
-      }
     }
   }
 }

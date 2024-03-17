@@ -1,8 +1,9 @@
 using System.Collections;
+using MainProje.Script.GoogleScript.Controler;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Script.Helper
+namespace MainProje.Script.Helper
 {
   public class FadeEffect : Singleton<FadeEffect>
   {

@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace Script.Helper
+namespace MainProje.Script.Helper
 {
   public class Destroy : MonoBehaviour
   {
@@ -11,7 +10,5 @@ namespace Script.Helper
     {
       Destroy(gameObject, destroyTime);
     }
-    
-    
   }
 }

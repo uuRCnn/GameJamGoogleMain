@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Script
+namespace MainProje.Script.GoogleScript.Controler
 {
   public class Singleton<T> : MonoBehaviour where T : Component
   {

@@ -1,36 +1,32 @@
-using System;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 
-namespace Script.GoogleScript.Slime
+namespace MainProje.Script.GoogleScript.Slime
 {
   public class SlimeDeadEFfect : MonoBehaviour
   {
-    [SerializeField]         Transform           slimeTransform;
+    [SerializeField] private Transform           slimeTransform;
     [SerializeField] private SkinnedMeshRenderer SkinedMeshRenderObject;
     [SerializeField] private Material            ownMaterial;
 
     [SerializeField] private GameObject KingDieEffect;
 
-    private Color deafulColor;
-
     public bool isDeadslime;
-    bool        isOneTimeDead;
 
-    private void OnEnable()
-    {
-      if (isOneTimeDead)
-      {
-        ownMaterial.color = deafulColor;
-      }
-    }
+    private Color deafulColor;
+    private bool  isOneTimeDead;
 
     private void Start()
     {
       // ownMaterial = SkinedMeshRenderObject.GetComponent<SkinnedMeshRenderer>().materials[0];
       ownMaterial = SkinedMeshRenderObject.materials[0];
       deafulColor = ownMaterial.color;
+    }
+
+    private void OnEnable()
+    {
+      if (isOneTimeDead) ownMaterial.color = deafulColor;
     }
 
     public async void SlimeDeadEffect()

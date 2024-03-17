@@ -1,9 +1,8 @@
-using System;
-using Script.Helper;
-using Script.Manager;
+using MainProje.Script.GoogleScript.Controler;
+using MainProje.Script.Helper;
 using UnityEngine;
 
-namespace Script.GoogleScript.Player
+namespace MainProje.Script.GoogleScript.Player
 {
   public class PlayerHealth : Singleton<PlayerHealth>
   {
@@ -22,12 +21,9 @@ namespace Script.GoogleScript.Player
       // UIManager.Instance.healthBar.value = health / 100;
       UIManager.Instance._hpBarPlayer.UpdateHealthBar(health);
 
-      if (health <= 100)
-      {
-        health += Time.deltaTime * 5;
-      }
+      if (health <= 100) health += Time.deltaTime * 5;
 
-      if (health <= 0 && workonce == true)
+      if (health <= 0 && workonce)
       {
         UIFade.SetActive(true);
         FadeEffect.Instance.FadeIn();

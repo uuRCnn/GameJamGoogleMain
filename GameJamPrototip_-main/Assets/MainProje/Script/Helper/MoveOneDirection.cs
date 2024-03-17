@@ -1,8 +1,7 @@
-using System;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace Script.Helper
+namespace MainProje.Script.Helper
 {
   public class MoveOneDirection : MonoBehaviour
   {
@@ -12,17 +11,17 @@ namespace Script.Helper
 
     public float speed = 2f;
 
+    private void Start()
+    {
+      UpdateFunc();
+    }
+
     // ==> Unity Event Functions <==
     // ========================================================================================
 
     private void Update()
     {
       transform.Translate(speed * Time.deltaTime * direction);
-    }
-
-    private void Start()
-    {
-      UpdateFunc();
     }
 
     private async void UpdateFunc()

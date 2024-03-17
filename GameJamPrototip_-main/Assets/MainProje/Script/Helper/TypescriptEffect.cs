@@ -1,5 +1,4 @@
 using System.Collections;
-using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 
@@ -8,7 +7,7 @@ using UnityEngine;
 
 // ReSharper disable ForCanBeConvertedToForeach
 
-namespace Script.Helper
+namespace MainProje.Script.Helper
 {
   public class TypescriptEffect : MonoBehaviour
   {

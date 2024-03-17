@@ -1,21 +1,19 @@
-using System;
 using Cysharp.Threading.Tasks;
-using Script.Manager;
-using UnityEditor.ShaderGraph.Internal;
+using MainProje.Script.GoogleScript.Controler;
 using UnityEngine;
 
-namespace Script.GoogleScript.Slime
+namespace MainProje.Script.GoogleScript.Slime
 {
   public class SlimeHealth : MonoBehaviour
   {
-    public  float     health = 50; // bazılarına  Unity den ver degerlrei
-    private EnemyAi   EnemyAi;
-    private Transform slimeObject;
-
-    private SlimeYapayZejka slimeYapayZejka;
+    public float health = 50; // bazılarına  Unity den ver degerlrei
 
 
     [SerializeField] private SlimeDeadEFfect SlimeDeadEFfect;
+    private                  EnemyAi         EnemyAi;
+    private                  Transform       slimeObject;
+
+    private SlimeYapayZejka slimeYapayZejka;
 
     private void Awake()
     {
@@ -73,10 +71,7 @@ namespace Script.GoogleScript.Slime
     {
       await UniTask.WaitForSeconds(8);
 
-      if (OwnGameManager.Instance.isAllBossDie)
-      {
-        return;
-      }
+      if (OwnGameManager.Instance.isAllBossDie) return;
 
       slimeObject.gameObject.SetActive(true);
       health = 50;

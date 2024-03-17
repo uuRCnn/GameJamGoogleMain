@@ -1,9 +1,8 @@
-using System;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Script.GoogleScript
+namespace MainProje.Script.GoogleScript
 {
   public class SpawnManager : MonoBehaviour
   {

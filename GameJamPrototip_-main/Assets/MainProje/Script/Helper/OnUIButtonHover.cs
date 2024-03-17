@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Script.Helper
+namespace MainProje.Script.Helper
 {
   [RequireComponent(typeof(Image))]
   public class OnUIButtonHover : MonoBehaviour

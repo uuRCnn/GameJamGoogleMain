@@ -1,18 +1,15 @@
-using System;
 using Cysharp.Threading.Tasks;
-using Script;
-using Script.GoogleScript;
-using Script.GoogleScript.Slime;
-using UnityEditor.ShaderGraph.Internal;
+using MainProje.Script.GoogleScript.Controler;
+using MainProje.Script.GoogleScript.Slime;
 using UnityEngine;
 
-namespace MainProje.Script.Hero
+namespace MainProje.Script.GoogleScript.Player
 {
   public class HeroCollider : Singleton<HeroCollider>
   {
-    public LayerMask                   slimeLayerMask;
-    float                              startGameforThisPosition = 5;
+    public                   LayerMask slimeLayerMask;
     [SerializeField] private Transform playerTranfsrom;
+    private readonly         float     startGameforThisPosition = 5;
     // private void OnTriggerEnter(Collider other) 
     // {
     //   if (other.CompareTag("StartGameCollider"))
@@ -29,6 +26,15 @@ namespace MainProje.Script.Hero
       StartGame();
     }
 
+    private void OnDrawGizmos()
+    {
+      Gizmos.color = Color.red;
+      Gizmos.DrawWireSphere(playerTranfsrom.position + Vector3.down * 2, 1.5f); //C için
+
+      Gizmos.color = Color.blue;
+      Gizmos.DrawWireSphere(playerTranfsrom.position, 6); //X için
+    }
+
     public async void AltSilindirSkillC(float dmg)
     {
       var time = 0f;
@@ -42,7 +48,7 @@ namespace MainProje.Script.Hero
           3f,
           Vector3.down,
           40,
-          layerMask: slimeLayerMask);
+          slimeLayerMask);
 
 
         foreach (var li in List)
@@ -58,15 +64,6 @@ namespace MainProje.Script.Hero
       }
     }
 
-    private void OnDrawGizmos()
-    {
-      Gizmos.color = Color.red;
-      Gizmos.DrawWireSphere(playerTranfsrom.position + Vector3.down * 2, 1.5f); //C için
-
-      Gizmos.color = Color.blue;
-      Gizmos.DrawWireSphere(playerTranfsrom.position, 6); //X için
-    }
-
     public async void BüyükYuvarlakSkillX(float dmg)
     {
       float time = 0;
@@ -79,7 +76,7 @@ namespace MainProje.Script.Hero
           6,
           Vector3.down,
           40,
-          layerMask: slimeLayerMask);
+          slimeLayerMask);
 
         foreach (var li in list)
         {
