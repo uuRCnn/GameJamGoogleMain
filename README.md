@@ -11,7 +11,7 @@ GameJame takımım ne yazıkki projeyi yapmaya katılmadı ve tek başıma yapt�
 
 Ekiptekilere farklı zamanda 3 4 kere sesli aradım fakat hiçkimse dönmedi, hiç hevesli değillerdi. 
 15 20 tane Asset attım 4 5 tane oyun fikri sundum fakat 1'ine bile hiç kimse yorum yapmadı.
-Bende ne yazıkki projeyi çok zorda olsa kendi başıma tamamlazım. 
+Bende ne yazıkki projeyi çok zorda olsa kendi başıma tamamladım. 
 
 
 Projedeki Hazır assetler dışındaki herşeyi kendim yaptım.
