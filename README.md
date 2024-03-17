@@ -1,5 +1,7 @@
 https://www.youtube.com/watch?v=cb5QuOamJu4
-<img width="1470" alt="Ekran Resmi 2024-03-17 23 59 39" src="https://github.com/uuRCnn/GameJamGoogleMain/assets/110777279/c67ee860-c985-4917-aebe-28ddc97d6b18">
+![aa](https://github.com/uuRCnn/GameJamGoogleMain/assets/110777279/9ab3c67a-65eb-434e-b754-76e15e37e95d)
+![jjk](https://github.com/uuRCnn/GameJamGoogleMain/assets/110777279/85115e3e-83b0-46a8-a0d2-ca5f1866528c)
+
 
 
 Hatasız çalışacak şekilde indirip oynıyabilirsiniz.
