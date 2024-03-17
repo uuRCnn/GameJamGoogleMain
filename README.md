@@ -1,5 +1,6 @@
 https://www.youtube.com/watch?v=cb5QuOamJu4
-![Uploading Ekran Resmi 2024-03-18 00.01.12.png…]()
+<img width="1470" alt="Ekran Resmi 2024-03-17 23 59 39" src="https://github.com/uuRCnn/GameJamGoogleMain/assets/110777279/c67ee860-c985-4917-aebe-28ddc97d6b18">
+
 
 Hatasız çalışacak şekilde indirip oynıyabilirsiniz.
 
