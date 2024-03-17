@@ -3,15 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - StartGameCollider
+  - KingSlime
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Slime
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 

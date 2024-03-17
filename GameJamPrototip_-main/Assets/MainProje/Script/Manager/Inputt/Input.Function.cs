@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using MainProje.Script.Hero;
 using Script.Hero;
 using Script.Hero.Movingg;
 using Script.OtherHero;
@@ -77,8 +78,8 @@ namespace Script.Manager.Inputt
     {
       isInteact = true;
 
-      if (HeroCollider.Instance.otherHerosScript != null)
-        HeroCollider.Instance.otherHerosScript.ShowTextUI();
+      // if (HeroCollider.Instance.otherHerosScript != null)
+        // HeroCollider.Instance.otherHerosScript.ShowTextUI();
 
       Moving.Instance.stopMoving = true;
 
